@@ -24,7 +24,7 @@
 <div id="page-preloader"><span class="spinner"></span></div>
 <!-- Loader end-->
 
-<div data-header="sticky" data-header-top="200" class="l-theme animated-css">
+<div id="app" data-header="sticky" data-header-top="200" class="l-theme animated-css">
     <!-- Start Switcher-->
     <div class="switcher-wrapper">
         <div class="demo_changer">
@@ -183,259 +183,42 @@
             </div>
         </div>
     </div>
-    <div class="section-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="text-center">
-                        <h2 class="ui-title-block ui-title-block_mod-a">开发工具</h2>
-                        <div class="ui-decor-type-1 center-block"></div>
+    <div id="app" class="section-default">
+        <template v-for="(assortsMaterial,index) in assortsMaterials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <h2 class="ui-title-block ui-title-block_mod-a">{{assortsMaterial.assortName}}</h2>
+                            <div class="ui-decor-type-1 center-block"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年10月</div>
-                                <div class="b-pricing-price__number">数据库</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
+                <div class="row">
+                    <template v-for="(assortList,index) in assortsMaterial.assortList">
+                        <div class="col-md-3 col-sm-6">
+                            <section class="b-pricing b-pricing_sm">
+                                <div class="b-pricing__inner">
+                                    <div class="b-pricing-price">
+                                        <div class="b-pricing-price__label"></div>
+                                        <div class="b-pricing-price__number">{{assortList.assortName}}</div>
+                                    </div>
+                                    <h3 class="b-pricing__title"></h3>
+                                </div>
+                                <ul class="b-pricing-list list-unstyled">
+                                    <template v-for="(material,index) in assortList.materialList" v-if="index<5">
+                                        <li class="b-pricing-list__item"><a :href="material.materialUrl">{{material.materialName}}</a></li>
+                                    </template>
+                                </ul>
+                                <a :href="'pricing-faqs-more.html?assortId='+assortList.id" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
+                            </section>
+                            <!-- end b-pricing-->
                         </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">MySql</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">SQL SERVER 2012</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">Oracle</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">Sybase</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">ACCESS</a></li>
-                        </ul>
-                        <a href="pricing-faqs-more.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年10月</div>
-                                <div class="b-pricing-price__number">集成开发环境</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">eclipse</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">idea</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">vs2010</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">vc</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">pyCharm</a></li>
-                        </ul>
-                        <a href="pricing-faqs-more.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年10月</div>
-                                <div class="b-pricing-price__number">框架集合</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">SSM框架集</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">MFC框架集</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">QT框架集</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">OPENGL3d图形开发环境</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">SSM框架集</a></li>
-                        </ul>
-                        <a href="pricing-faqs-more.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年10月</div>
-                                <div class="b-pricing-price__number">辅助工具</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">PhotoShop cs 6.0</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">viso</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">PhotoShop cs 6.0</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">PhotoShop cs 6.0</a></li>
-                            <li class="b-pricing-list__item"><a href="http://www.jetbrains.com/webstorm/">PhotoShop cs 6.0</a></li>
-                        </ul>
-                        <a href="pricing-faqs-more.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
+                    </template>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="text-center">
-                        <h2 class="ui-title-block ui-title-block_mod-a" style="margin-top:50px;">期刊论文</h2>
-                        <div class="ui-decor-type-1 center-block"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <section class="b-pricing b-pricing_lg">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年10月</div>
-                                <div class="b-pricing-price__number">关系抽取算法</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="https://www.cnblogs.com/theodoric008/p/7874373.html">实体关系抽取文献阅读总结</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/sinat_36972314/article/details/80266698">关系抽取（分类）总结【转载】</a></li>
-                            <li class="b-pricing-list__item"><a href="https://cloud.tencent.com/developer/news/280082">基于深度学习的关系抽取</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/yimixgg/article/details/79416968">神经网络在关系抽取中的应用</a></li>
-                            <li class="b-pricing-list__item"><a href="https://baijiahao.baidu.com/s?id=1612730772800624438&wfr=spider&for=pc">清华大学韩旭：神经关系抽取模型 ｜ AI研习社71期大讲堂</a></li>
-                        </ul>
-                        <a href="pricing-faqs-more.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-4">
-                    <section class="b-pricing b-pricing_lg">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年12月</div>
-                                <div class="b-pricing-price__number">知识图谱理论</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="https://www.cnblogs.com/theodoric008/p/7874373.html">全面了解知识图谱细节</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/sinat_36972314/article/details/80266698">知识图谱深度探索</a></li>
-                            <li class="b-pricing-list__item"><a href="https://cloud.tencent.com/developer/news/280082">知识图谱开拓研究</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/yimixgg/article/details/79416968">神经网络在关系抽取中的应用</a></li>
-                            <li class="b-pricing-list__item"><a href="https://baijiahao.baidu.com/s?id=1612730772800624438&wfr=spider&for=pc">清华大学韩旭：神经关系抽取模型 ｜ AI研习社71期大讲堂</a></li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-4">
-                    <section class="b-pricing b-pricing_lg">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年11月</div>
-                                <div class="b-pricing-price__number">领域词提取</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item"><a href="https://www.cnblogs.com/theodoric008/p/7874373.html">领域词提取文献阅读总结</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/sinat_36972314/article/details/80266698">领域词提取总结【转载】</a></li>
-                            <li class="b-pricing-list__item"><a href="https://cloud.tencent.com/developer/news/280082">基于深度学习的领域词提取</a></li>
-                            <li class="b-pricing-list__item"><a href="https://blog.csdn.net/yimixgg/article/details/79416968">神经网络在领域词提取中的应用</a></li>
-                            <li class="b-pricing-list__item"><a href="https://baijiahao.baidu.com/s?id=1612730772800624438&wfr=spider&for=pc">领域词提取模型 AI研习社71期大讲堂</a></li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="text-center">
-                        <h2 class="ui-title-block ui-title-block_mod-a" style="margin-top:50px;">视频教程</h2>
-                        <div class="ui-decor-type-1 center-block"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年9月</div>
-                                <div class="b-pricing-price__number">关系抽取</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item">如何快速上手关系抽取</li>
-                            <li class="b-pricing-list__item">深度讲解关系抽取的原理</li>
-                            <li class="b-pricing-list__item">版本控制系统整合</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年9月</div>
-                                <div class="b-pricing-price__number">MFC程序设计</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item">MFC程序设计第一讲</li>
-                            <li class="b-pricing-list__item">MFC程序设计第二讲</li>
-                            <li class="b-pricing-list__item">MFC程序设计第三讲</li>
-                            <li class="b-pricing-list__item">MFC程序设计第四讲</li>
-                            <li class="b-pricing-list__item">MFC程序设计第五讲</li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年9月</div>
-                                <div class="b-pricing-price__number">领域词提取第一课</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item">经典详细的知识讲解</li>
-                            <li class="b-pricing-list__item">支持先进 Python 开发工具链</li>
-                            <li class="b-pricing-list__item">版本控制系统整合</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <section class="b-pricing b-pricing_sm">
-                        <div class="b-pricing__inner">
-                            <div class="b-pricing-price">
-                                <div class="b-pricing-price__label">2018年9月</div>
-                                <div class="b-pricing-price__number">三元组组合</div>
-                            </div>
-                            <h3 class="b-pricing__title"></h3>
-                        </div>
-                        <ul class="b-pricing-list list-unstyled">
-                            <li class="b-pricing-list__item">经典详细的知识讲解</li>
-                            <li class="b-pricing-list__item">支持先进 Python 开发工具链</li>
-                            <li class="b-pricing-list__item">版本控制系统整合</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                            <li class="b-pricing-list__item">强大的快捷键支持</li>
-                        </ul>
-                        <a href="home.html" class="b-pricing__btn btn btn-primary btn-effect">更多</a>
-                    </section>
-                    <!-- end b-pricing-->
-                </div>
-            </div>
-        </div>
+            <label style="display:inline-block;width: 100%;height: 100px;"></label>
+        </template>
     </div>
 
     <footer class="footer">
@@ -457,7 +240,33 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/vue.min.js"></script>
+<script>
 
+    vue();
+    function getData() {
+        var assortsMaterials;
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8080/share/getAssorts.do",
+            async: false,
+            success: function (data) {
+                console.log(data);
+                assortsMaterials=JSON.parse(data);
+            }
+        });
+        return assortsMaterials;
+    }
+    function vue() {
+        var assortsMaterials=getData();
+        var app = new Vue({
+            el: '#app',
+            data: {
+                assortsMaterials:assortsMaterials
+            }
+        });
+    }
+</script>
 <script src="assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
 <script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
 <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>

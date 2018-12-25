@@ -24,7 +24,7 @@
 <div id="page-preloader"><span class="spinner"></span></div>
 <!-- Loader end-->
 
-<div data-header="sticky" data-header-top="200" class="l-theme animated-css">
+<div data-header="sticky" data-header-top="200" class="l-theme animated-css" id="app">
     <!-- Start Switcher-->
     <div class="switcher-wrapper">
         <div class="demo_changer">
@@ -51,27 +51,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <ul class="social-net list-inline">
-                            <li class="social-net__item"><a href="twitter.com" class="social-net__link"><i
-                                    class="icon fa fa-twitter"></i></a></li>
-                            <li class="social-net__item"><a href="facebook.com" class="social-net__link"><i
-                                    class="icon fa fa-facebook"></i></a></li>
-                            <li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i
-                                    class="icon fa fa-linkedin"></i></a></li>
-                            <li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i
-                                    class="icon fa fa-vimeo"></i></a></li>
-                            <li class="social-net__item"><a href="rss.com" class="social-net__link"><i
-                                    class="icon fa fa-rss"></i></a></li>
-                            <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i
-                                    class="icon fa fa-google-plus"></i></a></li>
-                        </ul>
+                        <!--<ul class="social-net list-inline">-->
+                            <!--<li class="social-net__item"><a href="twitter.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-twitter"></i></a></li>-->
+                            <!--<li class="social-net__item"><a href="facebook.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-facebook"></i></a></li>-->
+                            <!--<li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-linkedin"></i></a></li>-->
+                            <!--<li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-vimeo"></i></a></li>-->
+                            <!--<li class="social-net__item"><a href="rss.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-rss"></i></a></li>-->
+                            <!--<li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i-->
+                                    <!--class="icon fa fa-google-plus"></i></a></li>-->
+                        <!--</ul>-->
                         <!-- end social-list-->
                         <div class="header-contact">
-                            <div class="header-contact__item">Call :<span
-                                    class="header-contact__info"> 234 567 8900</span></div>
-                            <div class="header-contact__item">Email :<a href="mailto:info@domain.com"
-                                                                        class="header-contact__info">
-                                info@domain.com</a></div>
+                            <div class="header-contact__item">电话 :<span
+                                    class="header-contact__info"> {{team.teamPhone}}</span></div>
+                            <div class="header-contact__item">邮箱 :<a :href="'mailto:'+team.teamEmail"
+                                                                     class="header-contact__info">
+                                {{team.teamEmail}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -192,174 +192,39 @@
                 <div class="l-main-content l-main-content_pd-rgt l-main-content_pd-top_lg">
                     <div class="posts-group">
                         <article class="b-post b-post-4 clearfix">
-                            <div class="entry-media"><a href="assets/media/content/posts/780x420/1.jpg"
+                            <div class="entry-media"><a :href="intro.introUrl"
                                                         class="js-zoom-images"><img
-                                    src="assets/media/content/posts/780x420/1.jpg" alt="Foto"
+                                    :src="intro.introPicbig" alt="Foto"
                                     class="img-responsive"/></a></div>
                             <div class="entry-main">
                                 <div class="entry-header">
                                     <div class="entry-date">2018 10月</div>
                                     <div class="entry-meta">
                                         <span class="entry-meta__item"><i class="entry-meta__icon pe-7s-user"></i><a
-                                                href="post-1-experience.html" class="entry-meta__link">郭宇</a></span>
+                                                href="javascript:void(0);" class="entry-meta__link">{{intro.userName}}</a></span>
                                         <!--<span-->
                                         <!--class="entry-meta__item"><i class="entry-meta__icon pe-7s-comment"></i>Comments:<a-->
                                         <!--href="post-1-experience.html" class="entry-meta__link">20</a></span>-->
                                         <span
                                                 class="entry-meta__item"><i
                                                 class="entry-meta__icon pe-7s-portfolio"></i><a
-                                                href="post-1-experience.html" class="entry-meta__link">大数据与人工智能</a></span>
+                                                href="post-1-experience.html" class="entry-meta__link">{{intro.introRelname}}</a></span>
                                     </div>
-                                    <h2 class="entry-title entry-title_spacing ui-title-inner">薪酬知识图谱项目</h2>
+                                    <h2 class="entry-title entry-title_spacing ui-title-inner">{{intro.introTitle}}</h2>
                                 </div>
                                 <div class="entry-content">
-                                    <!--<p>知识图谱（Knowledge Graph/Vault）本质上是语义网络，是一种基于图的数据结构，由节点(Point)和边(Edge)组成。-->
-                                    <!--在知识图谱里，每个节点表示现实世界中存在的“实体”，每条边为实体与实体之间的“关系”。-->
-                                    <!--知识图谱是关系的最有效的表示方式。通俗地讲，知识图谱就是把所有不同种类的信息（Heterogeneous Information）连接在一起而得到的一个关系网络。-->
-                                    <!--知识图谱提供了从“关系”的角度去分析问题的能力。-->
-                                    <!--本项目的知识图谱构建是领域构建，也就是基于薪酬管理领域的知识图谱。-->
-                                    <!--我们以甲方提供的一本书作为数据源，主要进行两部分内容，知识图谱的三元组发现与可视化。-->
-                                    <!--</p>-->
-                                    <!--<p>Veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam-->
-                                    <!--voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur-->
-                                    <!--magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam-->
-                                    <!--est qui dolrem ipsum quia dolor sit amet consectetur adipisci velit sed quia non-->
-                                    <!--numquam.</p>-->
-                                    <!--<blockquote class="blockquote blockquote-1">-->
-                                    <!--<p>“ Corem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod-->
-                                    <!--tempor incididunt labore et dolore magna aliqua uat enim adminim veniam quis-->
-                                    <!--nostrud exercitation ulamco laboris nisi ut aliquip exea commodo conseq uat-->
-                                    <!--duis aute. ”</p>-->
-                                    <!--</blockquote>-->
-                                    <!--<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad-->
-                                    <!--minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea-->
-                                    <!--commodo consequat. Duis aute irure dolor reprehenderit in voluptate velit esse-->
-                                    <!--cillum dolore eu fugiat nulla pariatur. Excepteur sint occecat cupidatat non-->
-                                    <!--proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut-->
-                                    <!--perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque-->
-                                    <!--laudantium totam rem aperiam eaque ipsa qulle ab illo inventore. Veritatis et-->
-                                    <!--quasi architecto beatefas vitde dicta sunt explicabo. Nemo enim ipsam voluptatem-->
-                                    <!--quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni-->
-                                    <!--dolores eos qui ratione.</p>-->
-                                    <!--<div class="row">-->
-                                    <!--<div class="col-sm-6"><img src="assets/media/content/posts/370x320/1.jpg"-->
-                                    <!--alt="foto" class="img-post img-responsive"/></div>-->
-                                    <!--<div class="col-sm-6"><img src="assets/media/content/posts/370x320/2.jpg"-->
-                                    <!--alt="foto" class="img-post img-responsive"/></div>-->
+                                    <p v-html="intro.introBody"></p>
+                                </div>
+                                <!--<div class="entry-footer">-->
+                                    <!--<div class="post-tags">-->
+                                        <!--<div class="post-tags__title">标签:</div>-->
+                                        <!--<a href="post-1-experience.html" class="post-tags___item">深度学习,LTP,</a><a-->
+                                            <!--href="post-1-experience.html" class="post-tags___item"> neo4j,</a>-->
+                                        <!--&lt;!&ndash;<a href="post-1-experience.html" class="post-tags___item">Protection</a>&ndash;&gt;-->
                                     <!--</div>-->
-                                    <!--<h3 class="ui-title-inner-2">Lorem ipsum dolor sit amet</h3>-->
-                                    <!--<p>Labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation-->
-                                    <!--ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor-->
-                                    <!--reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.-->
-                                    <!--Excepteur sint occecat cupidatat non proident sunt in culpa qui officia deserunt-->
-                                    <!--mollit anim id est laborum.</p>-->
-                                    <!--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium-->
-                                    <!--doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore.-->
-                                    <!--Veritatis et quasi architecto beata vitad dicta sunt explicabo. Nemo enim ipsam-->
-                                    <!--voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur-->
-                                    <!--magni dolores eos qui ratione.</p>-->
-                                    <h2>
-                                        <ol>
-                                            <li>
-                                                项目介绍
-                                            </li>
-                                        </ol>
-                                    </h2>
-                                    <blockquote>
-                                        <p>
-                                            知识图谱（Knowledge
-                                            Graph/Vault）本质上是语义网络，是一种基于图的数据结构，由节点(Point)和边(Edge)组成。在知识图谱里，每个节点表示现实世界中存在的“实体”，每条边为实体与实体之间的“关系”。知识图谱是关系的最有效的表示方式。通俗地讲，知识图谱就是把所有不同种类的信息（Heterogeneous
-                                            Information）连接在一起而得到的一个关系网络。知识图谱提供了从“关系”的角度去分析问题的能力。
-                                        </p>
-                                        <p>
-                                            本次项目的知识图谱构建是领域构建，也就是构建的基于薪酬管理领域的知识图谱，我们以甲方提供的一本书作为数据源，主要进行两部分内容，知识图谱的三元组发现与可视化。
-                                        </p>
-                                    </blockquote>
-                                    <h2>
-                                        2.项目主要流程
-                                    </h2>
-                                    <h2>
-                                    </h2>
-                                    <p>
-	<span style="font-size:14px;background-color:#FFFFFF;color:#CC33E5;">1.&nbsp;&nbsp;&nbsp;
-实体词发现</span><br/>
-                                        （1）.领域词
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            监督方式(LSTM+CRF)
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            无监督方式(左右互信息+信息熵)
-                                        </li>
-                                    </ul>
-                                    （2）.关键词抽取<br/>
-                                    （3）.通过规则进行词扩展(jieba分词/pyltp)<br/>
-                                    <span style="font-size:14px;color:#CC33E5;">2.&nbsp;&nbsp;&nbsp;
-关系抽取</span><br/>
-                                    (1)&nbsp;&nbsp;&nbsp;
-                                    无监督工具+人为调整<br/>
-                                    (2)&nbsp;&nbsp;&nbsp;
-                                    基于规则，找到关键词(扩展使用工具Syonyms)<br/>
-                                    (3)&nbsp;&nbsp;&nbsp;
-                                    半监督工具CNDeepDive<br/>
-                                    <span style="font-size:14px;color:#CC33E5;">3.&nbsp;&nbsp;&nbsp;
-可视化</span><br/>
-                                    (1)&nbsp;&nbsp;&nbsp;neo4j读取并存储三元组<br/>
-                                    (2)&nbsp;&nbsp;&nbsp;d3.js实现关键词的关联节点及关系的显示<br/>
-                                    (3)&nbsp;&nbsp;&nbsp;
-                                    项目部署服务器
-                                    <p>
-                                        <br/>
-                                    </p>
-                                    <h3>
-                                        <a></a>
-                                    </h3>
-                                    <h3>
-                                        <a></a>
-                                    </h3>
-                                    <h2>
-                                        3.项目获奖情况
-                                    </h2>
-                                    <p>
-                                        <s>因为没有给我证书，所以我先放张图替换下</s>
-                                    </p>
-                                    <p style="text-align:center;">
-                                        <img src="http://172.18.0.27/group2/M00/00/00/rBIAGlwOC5aAcH4uAAd85cq6hPI694.png"
-                                             alt="DNN" width="338" height="234" title="DNN" align=""/>
-                                    </p>
-                                    <h2>
-                                        4.项目资料参考
-                                    </h2>
-                                    <p>
-                                        <br/>
-                                    </p>
-                                    <p>
-                                        <a href="https://pyltp.readthedocs.io/zh_CN/develop/api.html" target="_blank">【1】.pyltp基本使用</a>
-                                    </p>
-                                    <p>
-                                        <a href="https://zhuanlan.zhihu.com/knowledgegraph" target="_blank">【2】.知识图谱-给AI装个大脑</a>
-                                    </p>
-                                    <p>
-                                        <a href="https://www.tensorflow.org/api_docs/" target="_blank">【3】.tenserflow
-                                            API</a>
-                                    </p>
-                                    <p>
-                                        <a href="http://47.105.187.18/Salarymanage/static/js/d3.js" target="_blank">【4】.js测试</a>
-                                    </p>
-                                </div>
-                                <div class="entry-footer">
-                                    <div class="post-tags">
-                                        <div class="post-tags__title">标签:</div>
-                                        <a href="post-1-experience.html" class="post-tags___item">深度学习,LTP,</a><a
-                                            href="post-1-experience.html" class="post-tags___item"> neo4j,</a>
-                                        <!--<a href="post-1-experience.html" class="post-tags___item">Protection</a>-->
-                                    </div>
-                                    <a href="post-single-experience.html" class="entry-footer__link"><i
-                                            class="icon pe-7s-share"></i>分享</a>
-                                </div>
+                                    <!--<a href="post-single-experience.html" class="entry-footer__link"><i-->
+                                            <!--class="icon pe-7s-share"></i>分享</a>-->
+                                <!--</div>-->
                             </div>
                         </article>
                         <!-- end post-->
@@ -375,9 +240,9 @@
                                                                 alt="foto" class="img-responsive"/></div>
                             <div class="about-author__inner">
                                 <div class="about-author__header"><span
-                                        class="about-author__title">冯建周</span><span
+                                        class="about-author__title">{{subject.subjectTeacher}}</span><span
                                         class="about-author__category"> </span></div>
-                                <div class="about-author__description">燕山大学信息科学与工程学院软件工程系..........
+                                <div class="about-author__description">燕山大学信息科学与工程学院软件工程系
                                 </div>
                                 <footer class="about-author__footer">
                                     <ul class="social-net list-inline">
@@ -387,7 +252,7 @@
                                         <!--class="icon fa fa-facebook"></i></a></li>-->
                                         <!--<li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i-->
                                         <!--class="icon fa fa-linkedin"></i></a></li>-->
-                                        <li>联系电话:00000000000</li>
+                                        <li>团队成员:{{subject.subjectStudent}}</li>
                                     </ul>
                                     <!-- end social-list-->
                                 </footer>
@@ -395,148 +260,47 @@
                         </article>
                         <!-- end about-author-->
 
-                        <!--<section class="section-comment">-->
-                        <!--<div class="wrap-title">-->
-                        <!--<h2 class="ui-title-type-1 ui-title-type-1_sm">post comments (03)</h2>-->
-                        <!--<div class="ui-decor-wrap">-->
-                        <!--<div class="ui-decor-type-2"></div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<ul class="comments-list list-unstyled">-->
-                        <!--<li>-->
-                        <!--<article class="comment clearfix">-->
-                        <!--<div class="comment-avatar"><img src="assets/media/content/posts/avatar/1.jpg" alt="avatar" class="img-responsive"/></div>-->
-                        <!--<div class="comment-inner">-->
-                        <!--<header class="comment-header">-->
-                        <!--<cite class="comment-author">danny hill</cite>-->
-                        <!--<time datetime="2012-10-27" class="comment-datetime">31 May 2016, at 3:00pm</time><a href="post-1-experience.html" class="comment-btn color-promary">- reply</a>-->
-                        <!--</header>-->
-                        <!--<div class="comment-body">-->
-                        <!--<p>Dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit in voluptate velit.</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</article>-->
-                        <!--<ul class="children list-unstyled">-->
-                        <!--<li>-->
-                        <!--<article class="comment clearfix">-->
-                        <!--<div class="comment-avatar"><img src="assets/media/content/posts/avatar/2.jpg" alt="avatar" class="img-responsive"/></div>-->
-                        <!--<div class="comment-inner">-->
-                        <!--<header class="comment-header">-->
-                        <!--<cite class="comment-author">ren boosak</cite>-->
-                        <!--<time datetime="2012-10-27" class="comment-datetime">2 June 2016, at 6:10pm</time><a href="post-1-experience.html" class="comment-btn color-promary">- reply</a>-->
-                        <!--</header>-->
-                        <!--<div class="comment-body">-->
-                        <!--<p>Dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris commodo consequat. Duis aute irure dolor reprehenderit.</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</article>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                        <!--<article class="comment clearfix">-->
-                        <!--<div class="comment-avatar"><img src="assets/media/content/posts/avatar/3.jpg" alt="avatar" class="img-responsive"/></div>-->
-                        <!--<div class="comment-inner">-->
-                        <!--<header class="comment-header">-->
-                        <!--<cite class="comment-author">james camron</cite>-->
-                        <!--<time datetime="2012-10-27" class="comment-datetime">25 August 2016, at 7:30pm</time><a href="post-1-experience.html" class="comment-btn color-promary">- reply</a>-->
-                        <!--</header>-->
-                        <!--<div class="comment-body">-->
-                        <!--<p>Dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit in voluptate velit.</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</article>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                        <!--</section>-->
-                        <!--&lt;!&ndash; end section-comment&ndash;&gt;-->
-                        <!---->
-                        <!--<section id="section-reply-form" class="section-reply-form">-->
-                        <!--<div class="wrap-title">-->
-                        <!--<h2 class="ui-title-type-1 ui-title-type-1_sm">leave your reply</h2>-->
-                        <!--<div class="ui-decor-wrap">-->
-                        <!--<div class="ui-decor-type-2"></div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<form action="#" method="post" class="form-reply ui-form ui-form-1 typography-last-elem">-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-md-6">-->
-                        <!--<input type="text" placeholder="Name" class="form-control"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-6">-->
-                        <!--<input type="email" placeholder="Email" class="form-control"/>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-xs-12">-->
-                        <!--<textarea rows="6" placeholder="Comments" class="form-control"></textarea>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-xs-12">-->
-                        <!--<button class="ui-form__btn btn btn-primary btn-sm btn-effect">post comment</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</form>-->
-                        <!--</section>-->
-                        <!-- end section-reply-form-->
-
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <aside class="l-sidebar l-sidebar_mrg-lft_minus">
-                    <div class="widget widget-searce section-sidebar">
-                        <form id="search-global-form" class="form-search" action="post-1-experience.html">
-                            <input type="text" placeholder="搜索" class="form-search__input">
-                            <button class="form-search__btn"><i class="icon pe-7s-search"></i></button>
-                        </form>
-                    </div>
+                    <!--<div class="widget widget-searce section-sidebar">-->
+                        <!--<form id="search-global-form" class="form-search" action="post-1-experience.html">-->
+                            <!--<input type="text" placeholder="搜索" class="form-search__input">-->
+                            <!--<button class="form-search__btn"><i class="icon pe-7s-search"></i></button>-->
+                        <!--</form>-->
+                    <!--</div>-->
                     <!-- end widget-->
-                    <section class="widget section-sidebar">
-                        <h3 class="widget-title ui-title-block border-left border-left_primary">项目类别</h3>
-                        <div class="widget-content">
-                            <ul class="list-widget list list-mark-4 list-unstyled">
-                                <li class="list-widget__item"><a href="service-details.html" class="list-widget__link">深度学习
-                                    <span class="badge pull-right">(1)</span></a></li>
-                                <li class="list-widget__item"><a href="service-details.html" class="list-widget__link">结构化学习
-                                    <span class="badge pull-right">(1)</span></a></li>
-                                <li class="list-widget__item"><a href="service-details.html" class="list-widget__link">知识图谱
-                                    <span class="badge pull-right">(4)</span></a></li>
-                                <li class="list-widget__item"><a href="service-details.html" class="list-widget__link">大数据架构
-                                    <span class="badge pull-right">(5)</span></a></li>
-                                <li class="list-widget__item"><a href="service-details.html" class="list-widget__link">JAVA程序设计
-                                    <span class="badge pull-right">(14)</span></a></li>
-                            </ul>
-                        </div>
-                    </section>
+                    <!--<section class="widget section-sidebar">-->
+                        <!--<h3 class="widget-title ui-title-block border-left border-left_primary">项目类别</h3>-->
+                        <!--<div class="widget-content">-->
+                            <!--<ul class="list-widget list list-mark-4 list-unstyled">-->
+                                <!--<li class="list-widget__item"><a href="service-details.html" class="list-widget__link">深度学习-->
+                                    <!--<span class="badge pull-right">(1)</span></a></li>-->
+                                <!--<li class="list-widget__item"><a href="service-details.html" class="list-widget__link">结构化学习-->
+                                    <!--<span class="badge pull-right">(1)</span></a></li>-->
+                                <!--<li class="list-widget__item"><a href="service-details.html" class="list-widget__link">知识图谱-->
+                                    <!--<span class="badge pull-right">(4)</span></a></li>-->
+                                <!--<li class="list-widget__item"><a href="service-details.html" class="list-widget__link">大数据架构-->
+                                    <!--<span class="badge pull-right">(5)</span></a></li>-->
+                                <!--<li class="list-widget__item"><a href="service-details.html" class="list-widget__link">JAVA程序设计-->
+                                    <!--<span class="badge pull-right">(14)</span></a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</section>-->
                     <!-- end widget-->
                     <section class="widget section-sidebar">
                         <h3 class="widget-title ui-title-block border-left border-left_primary">最近成果</h3>
                         <div class="widget-content">
-                            <div class="post-widget clearfix">
-                                <div class="post-widget__media"><a href="blog-1.html"><img
-                                        src="assets/media/content/posts/97x85/1.jpg" alt="foto" class="img-responsive"/></a>
+                            <div class="post-widget clearfix" v-for="introRecent in introRecents">
+                                <div class="post-widget__media"><a :href="'post-single-achievement.html?introId='+introRecent.introId"><img
+                                        :src="introRecent.introPicdefault" alt="foto" class="img-responsive"/></a>
                                 </div>
-                                <div class="post-widget__inner"><a href="blog-1.html" class="post-widget__title">大学生行为预测分析系统</a>
-                                    <time datetime="2012-10-27 15:20" class="post-widget__date">2017年8月</time>
-                                </div>
-                            </div>
-                            <div class="post-widget clearfix">
-                                <div class="post-widget__media"><a href="blog-1.html"><img
-                                        src="assets/media/content/posts/97x85/2.jpg" alt="foto" class="img-responsive"/></a>
-                                </div>
-                                <div class="post-widget__inner"><a href="blog-1.html"
-                                                                   class="post-widget__title">岗位树知识体系</a>
-                                    <time datetime="2012-10-27 15:20" class="post-widget__date">2018年4月</time>
-                                </div>
-                            </div>
-                            <div class="post-widget clearfix">
-                                <div class="post-widget__media"><a href="blog-1.html"><img
-                                        src="assets/media/content/posts/97x85/3.jpg" alt="foto" class="img-responsive"/></a>
-                                </div>
-                                <div class="post-widget__inner"><a href="blog-1.html" class="post-widget__title">知识图谱的扩展及补全</a>
-                                    <time datetime="2012-10-27 15:20" class="post-widget__date">2018年7月</time>
+                                <div class="post-widget__inner"><a :href="'post-single-achievement.html?introId='+introRecent.introId"
+                                                                   class="post-widget__title">{{introRecent.introTitle}}</a>
+                                    <time class="post-widget__date">{{introRecent.introCreatetime}}</time>
+                                    <!--<div>{{introRecent.introCreatetime}}</div>-->
                                 </div>
                             </div>
                         </div>
@@ -545,11 +309,7 @@
                     <section class="widget section-sidebar">
                         <h3 class="widget-title ui-title-block border-left border-left_primary">关于我们</h3>
                         <div class="widget-content">
-                            <p>
-                                燕山大学大数据中心课题组秉承..........至于LSTM，LSTM和RNN不同的地方主要在于他有3个Gate来对输入的数据进行操作，也就是Input Gate、Forget
-                                Gate和Output Gate，且可以解决RNN的Gradient
-                                Vanishing的问题。Memory存储的是之前Memory训练的结果，而这也会在之后传递给下一次训练的Forget
-                                Gate用以*+，这也就体现了他的记忆性。以上是我随便写的。</p>
+                            <p>{{team.teamDes}}</p>
                         </div>
                     </section>
                     <!-- end widget-->
@@ -576,18 +336,10 @@
                         <h3 class="widget-title ui-title-block border-left border-left_primary">热门资料</h3>
                         <div class="widget-content">
                             <ul class="list-tags list-unstyled">
-                                <li class="list-tags__item"><a href="service-details.html"
-                                                               class="list-tags__link">信息安全</a>
+                                <li class="list-tags__item" v-for="assort in assortInfo">
+                                    <a :href="'pricing-faqs-more.html?assortId='+assort.id" class="list-tags__link">{{assort.assortName}}</a>
                                 </li>
-                                <li class="list-tags__item"><a href="service-details.html"
-                                                               class="list-tags__link">tenserflow学习</a></li>
-                                <li class="list-tags__item"><a href="service-details.html"
-                                                               class="list-tags__link">GAN</a>
-                                </li>
-                                <li class="list-tags__item"><a href="service-details.html"
-                                                               class="list-tags__link">深度学习</a></li>
-                                <li class="list-tags__item"><a href="service-details.html"
-                                                               class="list-tags__link">图数据库</a></li>
+
                                 <!--<li class="list-tags__item"><a href="service-details.html" class="list-tags__link">Mobile-->
                                 <!--escort</a></li>-->
                                 <!--<li class="list-tags__item"><a href="service-details.html" class="list-tags__link">surveillance</a>-->
@@ -645,17 +397,16 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="footer-main-section footer-main-section_left">
-                                <div class="footer__contact footer__contact_lg">电话: 110 110 1919</div>
+                                <div class="footer__contact footer__contact_lg">电话: {{team.teamPhone}}</div>
                                 <div class="footer__contact">
-                                    邮箱: abcdef@ysu.com
+                                    邮箱: {{team.teamEmail}}
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="footer-main-section footer-main-section_right">
                                 <div class="footer__contact footer__contact_lg">欢迎加入(๑•̀ㅂ•́)و✧</div>
-                                <div class="footer__contact">办公室: 燕山大学第三教学楼实验室401</div>
+                                <div class="footer__contact">办公室: {{team.teamLocation}}</div>
                                 <!--<form class="footer-form">-->
                                 <!--<input type="text" placeholder="Enter Your Email ..." class="footer-form__input"/>-->
                                 <!--<button class="footer-form__btn"><i class="icon pe-7s-mail"></i></button>-->
@@ -701,10 +452,12 @@
 <!-- end layout-theme-->
 
 
-<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/vue.min.js"></script>
+<script src="assets/js/jquery.params.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="assets/layui.js"></script>
 <script src="assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
 <script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
 <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -717,5 +470,116 @@
 <script src="assets/plugins/switcher/js/dmss.js"></script>
 <script src="assets/plugins/jarallax/jarallax.min.js"></script>
 <script src="assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script>
+    initalize();
+
+    function getData() {
+        var introId = $.query.get("introId");
+        var intro;
+        $.ajax({
+            url: "http://localhost:8080/achievement/singleAchievements.do",
+            data: {
+                introId: introId
+            },
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                intro = data;
+                console.log(intro);
+            }
+        });
+        return intro;
+    }
+    function getSubject() {
+        var introId = $.query.get("introId");
+        var subject;
+        $.ajax({
+            url: "http://localhost:8080/achievement/singleSubject.do",
+            data: {
+                introId: introId
+            },
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                subject = data;
+                console.log(subject);
+            }
+        });
+        return subject;
+    }
+    function getRecents() {
+        var introRecents;
+        $.ajax({
+            url: "http://localhost:8080/achievement/recentAchievements.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                introRecents = data;
+                console.log(introRecents);
+            }
+        });
+        return introRecents;
+    }
+    function getTeam() {
+        var teamInfo;
+        $.ajax({
+            url: "http://localhost:8080/achievement/teamInfo.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                teamInfo = data;
+                console.log(teamInfo);
+            }
+        });
+        return teamInfo;
+    }
+    function getassort() {
+        var assortInfo;
+        $.ajax({
+            url: "http://localhost:8080/achievement/assortInfo.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                assortInfo = data;
+                console.log(assortInfo);
+            }
+        });
+        return assortInfo;
+    }
+
+    function initalize() {
+        var intro=getData();
+        var introRecents=getRecents();
+        var subject=getSubject();
+        var assortInfo=getassort();
+        var team=getTeam();
+        var layer = layui.layer;
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                intro: intro,
+                subject:subject,
+                introRecents:introRecents,
+                assortInfo:assortInfo,
+                team:team
+            },
+            methods: {
+                reload() {
+
+                }
+            }
+        });
+    }
+    function layer_alert(msg) {
+        layui.use('layer', function (layer) {
+            layer.alert(msg);
+        });
+    }
+</script>
 </body>
 </html>

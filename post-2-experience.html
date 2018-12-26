@@ -11,6 +11,7 @@
 		<meta content="telephone=no" name="format-detection" />
 		<meta name="HandheldFriendly" content="true" />
 		<link rel="stylesheet" href="assets/css/master.css" />
+		<link rel="stylesheet" href="assets/css/layui.css"/>
 		<!-- SWITCHER-->
 		<link href="assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all" />
 		<link href="assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all" />
@@ -26,7 +27,7 @@
 		<div id="page-preloader"><span class="spinner"></span></div>
 		<!-- Loader end-->
 
-		<div data-header="sticky" data-header-top="200" class="l-theme animated-css">
+		<div data-header="sticky" data-header-top="200" class="l-theme animated-css" id="allBlog">
 			<!-- Start Switcher-->
 			<div class="switcher-wrapper">
 				<div class="demo_changer">
@@ -196,28 +197,26 @@
 						<div class="l-main-content l-main-content_pd-top_lg l-main-content_pd-rgt_sm">
 							<div class="posts-group_2-col">
 								<div class="js-scroll-content">
-									<article class="b-post b-post-3 clearfix">
+									<article class="b-post b-post-3 clearfix"  v-for="(blog,index) in blogs" >
 										<div class="entry-media">
-											<a href="assets/media/content/posts/380x350/1.jpg" class="js-zoom-images"><img src="assets/media/content/posts/380x350/1.jpg" alt="Foto" class="img-responsive" /></a>
+											<a :href=blog.blogPicdefault class="js-zoom-images"><img v-bind:src=blog.blogPicdefault alt="Foto" class="img-responsive" style="height: 300px;width: 450px" /></a>
 										</div>
 										<div class="entry-main">
 											<div class="entry-header">
-												<div class="entry-date">2018.12.10</div>
-												<h2 class="entry-title entry-title_spacing ui-title-inner">数据可视化之美：经典案例与实践解析</h2>
-												<div class="entry-meta"><span class="entry-meta__item"><i class="entry-meta__icon pe-7s-user"></i>作者：<a href="post-1-experience.html" class="entry-meta__link"> Sandy</a></span></div>
+												<div class="entry-date">{{blog.blogUpdatetime}}</div>
+												<h2 class="entry-title entry-title_spacing ui-title-inner">{{blog.blogName}}</h2>
+												<div class="entry-meta"><span class="entry-meta__item"><i class="entry-meta__icon pe-7s-user"></i>作者：<a href="post-1-experience.html" class="entry-meta__link"> {{blog.userName}}</a></span></div>
 											</div>
 											<div class="entry-content">
-												<p>随着DT时代的到来，传统的统计图表很难对复杂数据进行直观地展示。这几年数据可视化作为一个新研究领域也变得越来越火。成功的可视化，如果做得漂亮，虽表面简单却富含深意，可以让观测者一眼就能洞察事实并产生新的理解。可视化(visualization)和可视效果(visual)两个词是等价的，表示所有结构化的信息表现方式，包括图形、图表、示意图、地图、故事情节图以及不是很正式的结构化插图。</p>
+												<p>{{blog.blogDes}}</p>
 											</div>
 											<div class="entry-footer">
-												<a href="post-single-experience.html" class="btn btn-sm">详情...</a>
+												<a :href="'post-single-experience.html?userId='+blog.userId+'&blogId='+blog.blogId" class="btn btn-sm">详情...</a>
 												
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
-
-									<article class="b-post b-post-3 clearfix">
+<!--									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
 											<a href="assets/media/content/posts/380x350/2.jpg" class="js-zoom-images"><img src="assets/media/content/posts/380x350/2.jpg" alt="Foto" class="img-responsive" /></a>
 										</div>
@@ -236,7 +235,6 @@
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
 
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -257,7 +255,6 @@
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
 
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -276,13 +273,10 @@
 												<a href="post-single-experience.html" class="btn btn-sm">详情...</a>
 											</div>
 										</div>
-									</article>
-									<!-- end post-->
+									</article>-->
 
-									
 
-								</div>
-								<div class="js-scroll-next text-center"><span class="btn btn-default btn-sm btn-effect js-scroll-next">加载更多</span></div>
+								<!--<div class="js-scroll-next text-center"><span class="btn btn-default btn-sm btn-effect js-scroll-next">加载更多</span></div>
 								<div class="js-scroll-content">
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -302,7 +296,6 @@
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
 
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -322,7 +315,6 @@
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
 
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -342,7 +334,6 @@
 											</div>
 										</div>
 									</article>
-									<!-- end post-->
 
 									<article class="b-post b-post-3 clearfix">
 										<div class="entry-media">
@@ -361,19 +352,19 @@
 												<a href="post-single-experience.html" class="btn btn-sm">详情...</a>
 											</div>
 										</div>
-									</article>
-									<!-- end post-->
+									</article>-->
 									
 								</div>
 							</div>
+							<div id="test1"></div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<aside class="l-sidebar l-sidebar_mrg-lft_minus">
 							<div class="widget widget-searce section-sidebar">
 								<form id="search-global-form" class="form-search">
-									<input type="text" placeholder="搜索..." class="form-search__input">
-									<button class="form-search__btn"><i class="icon pe-7s-search"></i></button>
+									<input type="text" onkeyup="this.value=this.value.replace(/\s+/g,'')" id="searchContext" placeholder="搜索..." class="form-search__input" v-model="context">
+									<button class="form-search__btn" type="button" @click="reload()"><i class="icon pe-7s-search"></i></button>
 								</form>
 							</div>
 							<!-- end widget-->
@@ -381,24 +372,24 @@
 								<h3 class="widget-title ui-title-block border-left border-left_primary">所有分类</h3>
 								<div class="widget-content">
 									<ul class="list-widget list list-mark-4 list-unstyled">
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">Risk Assessment<span class="badge pull-right">(80)</span></a>
+										<li class="list-widget__item" v-for="category in categories">
+											<a :href="'post-2-experience.html?categoryId='+category.categoryId" class="list-widget__link">{{category.categoryName}}<span class="badge pull-right">( {{category.blogCount}} )</span></a>
 										</li>
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">CCTV Camera Systems<span class="badge pull-right">(25)</span></a>
-										</li>
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">Life Threat Protection<span class="badge pull-right">(12)</span></a>
-										</li>
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">Remote Guarding<span class="badge pull-right">(7)</span></a>
-										</li>
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">Event Security<span class="badge pull-right">(114)</span></a>
-										</li>
-										<li class="list-widget__item">
-											<a href="service-details.html" class="list-widget__link">VIP Movement Security<span class="badge pull-right">(50)</span></a>
-										</li>
+										<!--<li class="list-widget__item">-->
+											<!--<a href="service-details.html" class="list-widget__link">CCTV Camera Systems<span class="badge pull-right">(25)</span></a>-->
+										<!--</li>-->
+										<!--<li class="list-widget__item">-->
+											<!--<a href="service-details.html" class="list-widget__link">Life Threat Protection<span class="badge pull-right">(12)</span></a>-->
+										<!--</li>-->
+										<!--<li class="list-widget__item">-->
+											<!--<a href="service-details.html" class="list-widget__link">Remote Guarding<span class="badge pull-right">(7)</span></a>-->
+										<!--</li>-->
+										<!--<li class="list-widget__item">-->
+											<!--<a href="service-details.html" class="list-widget__link">Event Security<span class="badge pull-right">(114)</span></a>-->
+										<!--</li>-->
+										<!--<li class="list-widget__item">-->
+											<!--<a href="service-details.html" class="list-widget__link">VIP Movement Security<span class="badge pull-right">(50)</span></a>-->
+										<!--</li>-->
 									</ul>
 								</div>
 							</section>
@@ -406,33 +397,33 @@
 							<section class="widget section-sidebar">
 								<h3 class="widget-title ui-title-block border-left border-left_primary">最新发表</h3>
 								<div class="widget-content">
-									<div class="post-widget clearfix">
+									<div class="post-widget clearfix" v-for="recentBlog in recentBlogs">
 										<div class="post-widget__media">
-											<a href="blog-1.html"><img src="assets/media/content/posts/97x85/1.jpg" alt="foto" class="img-responsive" /></a>
+											<a :href="'post-single-experience.html?userId='+recentBlog.userId+'&blogId='+recentBlog.blogId"><img :src=recentBlog.blogPicdefault alt="foto" class="img-responsive" /></a>
 										</div>
 										<div class="post-widget__inner">
-											<a href="blog-1.html" class="post-widget__title">这是最近发表的一篇文章</a>
-											<time datetime="2012-10-27 15:20" class="post-widget__date">2018.12.10</time>
+											<a :href="'post-single-experience.html?userId='+recentBlog.userId+'&blogId='+recentBlog.blogId" class="post-widget__title">{{recentBlog.blogName}}</a>
+											<time datetime="2012-10-27 15:20" class="post-widget__date">{{recentBlog.blogCreatetime}}</time>
 										</div>
 									</div>
-									<div class="post-widget clearfix">
-										<div class="post-widget__media">
-											<a href="blog-1.html"><img src="assets/media/content/posts/97x85/2.jpg" alt="foto" class="img-responsive" /></a>
-										</div>
-										<div class="post-widget__inner">
-											<a href="blog-1.html" class="post-widget__title">这也是最近发表的一篇文章</a>
-											<time datetime="2012-10-27 15:20" class="post-widget__date">2018.12.10</time>
-										</div>
-									</div>
-									<div class="post-widget clearfix">
-										<div class="post-widget__media">
-											<a href="blog-1.html"><img src="assets/media/content/posts/97x85/3.jpg" alt="foto" class="img-responsive" /></a>
-										</div>
-										<div class="post-widget__inner">
-											<a href="blog-1.html" class="post-widget__title">这还是最近发表的一篇文章</a>
-											<time datetime="2012-10-27 15:20" class="post-widget__date">2018.12.10</time>
-										</div>
-									</div>
+									<!--<div class="post-widget clearfix">-->
+									<!--<div class="post-widget__media">-->
+									<!--<a href="blog-1.html"><img src="assets/media/content/posts/97x85/2.jpg" alt="foto" class="img-responsive" /></a>-->
+									<!--</div>-->
+									<!--<div class="post-widget__inner">-->
+									<!--<a href="blog-1.html" class="post-widget__title">这也是一篇最新发表的文章</a>-->
+									<!--<time datetime="2012-10-27 15:20" class="post-widget__date">2018.12.10</time>-->
+									<!--</div>-->
+									<!--</div>-->
+									<!--<div class="post-widget clearfix">-->
+									<!--<div class="post-widget__media">-->
+									<!--<a href="blog-1.html"><img src="assets/media/content/posts/97x85/3.jpg" alt="foto" class="img-responsive" /></a>-->
+									<!--</div>-->
+									<!--<div class="post-widget__inner">-->
+									<!--<a href="blog-1.html" class="post-widget__title">这还是一篇最新发表的文章</a>-->
+									<!--<time datetime="2012-10-27 15:20" class="post-widget__date">2018.12.10</time>-->
+									<!--</div>-->
+									<!--</div>-->
 								</div>
 							</section>
 							<!-- end widget-->
@@ -462,60 +453,8 @@
               -->
 							
 							
-							<section class="widget section-sidebar">
-								<h3 class="widget-title ui-title-block border-left border-left_primary">流行标签</h3>
-								<div class="widget-content">
-									<ul class="list-tags list-unstyled">
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">大数据</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">人工智能</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">基础</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">数据可视化</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">Python</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">Java</a>
-										</li>
-										<li class="list-tags__item">
-											<a href="service-details.html" class="list-tags__link">Linux</a>
-										</li>
-									</ul>
-								</div>
-							</section>
+
 							<!-- end widget-->
-							<div class="section-sidebar">
-								<div class="border-2-colors border-2-colors_border-bottom">
-									<div class="b-banners-1 section-bg section-bg_grey-2 b-banners-1_mod-a">
-										<div class="section__inner">
-											<div class="b-banners-1__text">了解更多大数据相关</div>
-											<a href="home.html" class="b-banners-1__btn btn btn-default btn-sm btn-effect">Go！</a>
-										</div>
-									</div>
-								</div>
-								<!-- end b-banners-->
-							</div>
-							<div class="section-sidebar">
-								<div class="b-download b-download_mod-a">
-									<h3 class="b-download__title">下载</h3>
-									<div class="b-download__item">
-										<a href="assets/downloads/doc-2.pdf" class="b-download__link color-primary"><i class="b-download__icon fa fa-file-pdf-o"></i>PDF格式下载</a>
-										<div class="b-download__size">size: 3mb</div>
-									</div>
-									<div class="b-download__item">
-										<a href="assets/downloads/doc-1.doc" class="b-download__link color-primary"><i class="b-download__icon fa fa-file-word-o"></i>DOC格式下载</a>
-										<div class="b-download__size">size: 3mb</div>
-									</div>
-								</div>
-								<!-- end b-download-->
-							</div>
 						</aside>
 					</div>
 				</div>
@@ -595,10 +534,12 @@
 		</div>
 		<!-- end layout-theme-->
 
-		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/vue.min.js"></script>
+		<script src="assets/js/jquery.params.js"></script>
 		<script src="assets/js/custom.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
-
+		<script src="assets/layui.js"></script>
 		<script src="assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
 		<script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
 		<script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -611,6 +552,152 @@
 		<script src="assets/plugins/switcher/js/dmss.js"></script>
 		<script src="assets/plugins/jarallax/jarallax.min.js"></script>
 		<script src="assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+
+	<script>
+		initalize();
+		function getData() {
+			var pageNumber = $.query.get("pageNumber");
+			var limit = $.query.get("limit");
+			if (pageNumber == "") {
+				pageNumber = 1;
+			}
+			if (limit == "") {
+				limit = 4;
+			}
+			var tableResponse;
+			var categoryId=$.query.get("categoryId");
+			$.ajax({
+				url: "http://localhost:8080/blog/getData.do",
+				type: "get",
+				data:{
+					categoryId:categoryId,
+					page: pageNumber,
+					limit: limit,
+					context:  $.query.get("context")
+				},
+				dataType: "json",
+				async: false,
+				success: function (data) {
+					tableResponse = data;
+					console.log(tableResponse);
+				}
+			});
+			return tableResponse;
+		}
+		function getData2(pageNumber,limit) {
+			var tableResponse;
+			$.ajax({
+				url: "http://localhost:8080/blog/getData.do",
+				data: {
+					page: pageNumber,
+					limit: limit,
+					context:  $('#searchContext').val()
+				},
+				type: "get",
+				dataType: "json",
+				async: false,
+				success: function (data) {
+					tableResponse = data;
+					console.log(tableResponse);
+				}
+			});
+			return tableResponse;
+		}
+		function getRecent() {
+			var recentBlogs;
+			$.ajax({
+				url: "http://localhost:8080/blog/recentBlog.do",
+				type: "get",
+				dataType: "json",
+				async: false,
+				success: function (data) {
+					recentBlogs = data;
+					console.log(recentBlogs);
+				}
+			});
+			return recentBlogs;
+		}
+		function getCategory() {
+			var categories;
+			$.ajax({
+				url: "http://localhost:8080/blog/getCategory.do",
+				type: "get",
+				dataType: "json",
+				async: false,
+				success: function (data) {
+					categories = data;
+					console.log(categories);
+				}
+			});
+			return categories;
+		}
+		function initalize() {
+			var tableResponse=getData();
+			var recentBlogs=getRecent();
+			var categories=getCategory();
+			var layer = layui.layer;
+			var vue = new Vue({
+				el: "#allBlog",
+				data: {
+					blogs: tableResponse.data,
+					recentBlogs:recentBlogs,
+					categories:categories
+				},
+				computed:{
+					context:function () {
+						var context=$.query.get("context");
+						context=String(context);
+						console.log(context);
+						if(context==="true"){
+							return "";
+						}else{
+							return context;
+						}
+					}
+				},
+				methods: {
+					reload() {
+						var context = $(" #searchContext ").val();
+						console.log(context);
+						if(context==""){
+							layer_alert("条件不能为空哦");
+						}else{
+							//默认从1开始
+							location.href = '?context='+context+'&pageNumber=' + 1 + '&limit=' + 4;
+						}
+					}
+				}
+			});
+
+			var count=tableResponse.count;
+			count=Number(count);
+			layui.use(['laypage'], function () {
+				var laypage = layui.laypage;
+				// tableResponse = search();
+				//执行一个laypage实例
+				laypage.render({
+					elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+					, count:count  //数据总数，从服务端得到
+					, limit: 4
+					, group: 5
+					, jump: function (e, first) {
+						if (!first) {
+							console.log(e.curr);
+							vue.blogs=getData2(e.curr,e.limit).data;
+							//location.href = '?pageNumber=' + e.curr + '&limit=' + e.limit;
+						}
+					}
+				});
+			});
+		}
+		function layer_alert(msg) {
+			layui.use('layer', function (layer) {
+				layer.alert(msg);
+			});
+		}
+
+
+	</script>
 	</body>
 
 </html>

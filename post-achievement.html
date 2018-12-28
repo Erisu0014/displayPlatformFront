@@ -189,7 +189,7 @@
                                         class="img-responsive"/></a></div>
                                 <div class="entry-main">
                                     <div class="entry-header">
-                                        <div class="entry-date">{{intro.introCreatetime}}</div>
+                                        <div class="entry-date">{{intro.introCreatetime.substring(0,10)}}</div>
                                         <div class="entry-meta"><span class="entry-meta__item"><i
                                                 class="entry-meta__icon pe-7s-user"></i><a href="#"
                                                                                            class="entry-meta__link"> {{intro.userName}}</a></span>
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="post-widget__inner"><a :href="'post-single-achievement.html?introId='+introRecent.introId"
                                                                    class="post-widget__title">{{introRecent.introTitle}}</a>
-                                    <time class="post-widget__date">{{introRecent.introCreatetime}}</time>
+                                    <time class="post-widget__date">{{introRecent.introCreatetime.substring(0,10)}}</time>
                                     <!--<div>{{introRecent.introCreatetime}}</div>-->
                                 </div>
                             </div>

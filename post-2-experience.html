@@ -203,7 +203,7 @@
 										</div>
 										<div class="entry-main">
 											<div class="entry-header">
-												<div class="entry-date">{{blog.blogUpdatetime}}</div>
+												<div class="entry-date">{{blog.blogUpdatetime.substring(0,10)}}</div>
 												<h2 class="entry-title entry-title_spacing ui-title-inner">{{blog.blogName}}</h2>
 												<div class="entry-meta"><span class="entry-meta__item"><i class="entry-meta__icon pe-7s-user"></i>作者：<a href="post-1-experience.html" class="entry-meta__link"> {{blog.userName}}</a></span></div>
 											</div>
@@ -403,7 +403,7 @@
 										</div>
 										<div class="post-widget__inner">
 											<a :href="'post-single-experience.html?userId='+recentBlog.userId+'&blogId='+recentBlog.blogId" class="post-widget__title">{{recentBlog.blogName}}</a>
-											<time datetime="2012-10-27 15:20" class="post-widget__date">{{recentBlog.blogCreatetime}}</time>
+											<time datetime="2012-10-27 15:20" class="post-widget__date">{{recentBlog.blogCreatetime.substring(0,10)}}</time>
 										</div>
 									</div>
 									<!--<div class="post-widget clearfix">-->

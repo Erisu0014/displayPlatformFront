@@ -183,13 +183,13 @@
                         <!--<template >-->
                             <article class="b-post b-post-2 clearfix" v-for="intro in introPage" v-model="introPage">
                                 <div class="entry-media"><a
-                                        :href="'post-single-achievement.html?introId='+intro.introId"
+                                        :href="intro.introPicbig"
                                         class="js-zoom-images"><img
                                         :src="intro.introPicdefault" alt="Foto"
                                         class="img-responsive"/></a></div>
                                 <div class="entry-main">
                                     <div class="entry-header">
-                                        <div class="entry-date">{{intro.introCreatetime}}</div>
+                                        <div class="entry-date">{{intro.introCreatetime.substring(0,10)}}</div>
                                         <div class="entry-meta"><span class="entry-meta__item"><i
                                                 class="entry-meta__icon pe-7s-user"></i><a href="#"
                                                                                            class="entry-meta__link"> {{intro.userName}}</a></span>
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="post-widget__inner"><a :href="'post-single-achievement.html?introId='+introRecent.introId"
                                                                    class="post-widget__title">{{introRecent.introTitle}}</a>
-                                    <time class="post-widget__date">{{introRecent.introCreatetime}}</time>
+                                    <time class="post-widget__date">{{introRecent.introCreatetime.substring(0,10)}}</time>
                                     <!--<div>{{introRecent.introCreatetime}}</div>-->
                                 </div>
                             </div>
@@ -457,7 +457,7 @@
 
         var tableResponse;
         $.ajax({
-            url: "http://localhost:8080/achievement/getAchievements.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/getAchievements.do",
             data: {
                 page: pageNumber,
                 limit: limit,
@@ -476,7 +476,7 @@
     function getData2(pageNumber,limit) {
         var tableResponse;
         $.ajax({
-            url: "http://localhost:8080/achievement/getAchievements.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/getAchievements.do",
             data: {
                 page: pageNumber,
                 limit: limit,
@@ -495,7 +495,7 @@
     function getRecents() {
         var introRecents;
         $.ajax({
-            url: "http://localhost:8080/achievement/recentAchievements.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/recentAchievements.do",
             type: "get",
             dataType: "json",
             async: false,
@@ -509,7 +509,7 @@
     function getTeam() {
         var teamInfo;
         $.ajax({
-            url: "http://localhost:8080/achievement/teamInfo.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/teamInfo.do",
             type: "get",
             dataType: "json",
             async: false,
@@ -523,7 +523,7 @@
     function getassort() {
         var assortInfo;
         $.ajax({
-            url: "http://localhost:8080/achievement/assortInfo.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/assortInfo.do",
             type: "get",
             dataType: "json",
             async: false,

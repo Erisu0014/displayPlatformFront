@@ -464,7 +464,7 @@
     var users;
     $.ajax({
         type: "get",
-        url: "http://localhost:8080/team/getTeams.do",
+        url: "http://47.105.187.18/labDisplayPlatform/team/getTeams.do",
         async: false,
         dataType:"json",
         success: function (data) {
@@ -474,7 +474,7 @@
     });
     $.ajax({
         type: "get",
-        url: "http://localhost:8080/user/getUsers.do",
+        url: "http://47.105.187.18/labDisplayPlatform/user/getUsers.do",
         async: false,
         dataType:"json",
         success: function (data) {
@@ -554,5 +554,6 @@
 <script src="assets/plugins/switcher/js/dmss.js"></script>
 <script src="assets/plugins/jarallax/jarallax.min.js"></script>
 <script src="assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+
 </body>
 </html>

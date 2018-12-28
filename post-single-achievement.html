@@ -192,9 +192,9 @@
                 <div class="l-main-content l-main-content_pd-rgt l-main-content_pd-top_lg">
                     <div class="posts-group">
                         <article class="b-post b-post-4 clearfix">
-                            <div class="entry-media"><a :href="intro.introUrl"
+                            <div class="entry-media"><a :href="intro.introPicbig"
                                                         class="js-zoom-images"><img
-                                    :src="intro.introPicbig" alt="Foto"
+                                    :src="intro.introPicdefault" alt="Foto"
                                     class="img-responsive"/></a></div>
                             <div class="entry-main">
                                 <div class="entry-header">
@@ -210,11 +210,17 @@
                                                 class="entry-meta__icon pe-7s-portfolio"></i><a
                                                 href="post-1-experience.html" class="entry-meta__link">{{intro.introRelname}}</a></span>
                                     </div>
-                                    <h2 class="entry-title entry-title_spacing ui-title-inner">{{intro.introTitle}}</h2>
+                                    <h2 class="entry-title entry-title_spacing ui-title-inner">
+                                        <a :href="intro.introUrl" class="entry-meta__link">
+                                        {{intro.introTitle}}
+                                        </a>
+                                    </h2>
                                 </div>
                                 <div class="entry-content">
                                     <p v-html="intro.introBody"></p>
+                                    <template v-if="intro.introDocument!=''">
                                     <a :href="intro.introDocument">文章附件</a>
+                                    </template>
                                 </div>
                                 <!--<div class="entry-footer">-->
                                     <!--<div class="post-tags">-->
@@ -478,7 +484,7 @@
         var introId = $.query.get("introId");
         var intro;
         $.ajax({
-            url: "http://localhost:8080/achievement/singleAchievements.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/singleAchievements.do",
             data: {
                 introId: introId
             },
@@ -496,7 +502,7 @@
         var introId = $.query.get("introId");
         var subject;
         $.ajax({
-            url: "http://localhost:8080/achievement/singleSubject.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/singleSubject.do",
             data: {
                 introId: introId
             },
@@ -513,7 +519,7 @@
     function getRecents() {
         var introRecents;
         $.ajax({
-            url: "http://localhost:8080/achievement/recentAchievements.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/recentAchievements.do",
             type: "get",
             dataType: "json",
             async: false,
@@ -527,7 +533,7 @@
     function getTeam() {
         var teamInfo;
         $.ajax({
-            url: "http://localhost:8080/achievement/teamInfo.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/teamInfo.do",
             type: "get",
             dataType: "json",
             async: false,
@@ -541,7 +547,7 @@
     function getassort() {
         var assortInfo;
         $.ajax({
-            url: "http://localhost:8080/achievement/assortInfo.do",
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/assortInfo.do",
             type: "get",
             dataType: "json",
             async: false,

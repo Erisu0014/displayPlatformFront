@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 
     if (windowWidth > tabletWidth) {
-
+        console.log($(".l-theme").data("header"))
         var headerSticky = $(".l-theme").data("header");
         var headerTop = $(".l-theme").data("header-top");
 

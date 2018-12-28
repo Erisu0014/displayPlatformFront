@@ -52,26 +52,15 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <ul class="social-net list-inline">
-                            <li class="social-net__item"><a href="twitter.com" class="social-net__link"><i
-                                    class="icon fa fa-twitter"></i></a></li>
-                            <li class="social-net__item"><a href="facebook.com" class="social-net__link"><i
-                                    class="icon fa fa-facebook"></i></a></li>
-                            <li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i
-                                    class="icon fa fa-linkedin"></i></a></li>
-                            <li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i
-                                    class="icon fa fa-vimeo"></i></a></li>
-                            <li class="social-net__item"><a href="rss.com" class="social-net__link"><i
-                                    class="icon fa fa-rss"></i></a></li>
-                            <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i
-                                    class="icon fa fa-google-plus"></i></a></li>
+
                         </ul>
                         <!-- end social-list-->
                         <div class="header-contact">
-                            <div class="header-contact__item">Call :<span
-                                    class="header-contact__info"> 234 567 8900</span></div>
-                            <div class="header-contact__item">Email :<a href="mailto:info@domain.com"
-                                                                        class="header-contact__info">
-                                info@domain.com</a></div>
+                            <div class="header-contact__item">电话 :<span
+                                    class="header-contact__info"> {{team.teamPhone}}</span></div>
+                            <div class="header-contact__item">邮箱 :<a :href="'mailto:'+team.teamEmail"
+                                                                     class="header-contact__info">
+                                {{team.teamEmail}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -88,44 +77,19 @@
                                         class="navbar-toggle"><span class="icon-bar"></span><span
                                         class="icon-bar"></span><span class="icon-bar"></span></button>
                             </div>
-                            <a href="home.html" class="btn-primary header-main__btn btn btn-sm btn-effect">ask a
-                                quote</a>
-                            <div class="search-trigger"><i class="icon pe-7s-search"></i></div>
                             <nav class="navbar yamm">
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav">
                                         <li class="dropdown"><a href="home.html">主页</a>
-                                            <!--<ul role="menu" class="dropdown-menu">-->
-                                            <!--<li><a href="home.html">Home - ver.01</a></li>-->
-                                            <!--<li><a href="home-2.html">Home - ver.02</a></li>-->
-                                            <!--</ul>-->
                                         </li>
                                         <li><a href="about.html">团队介绍</a></li>
                                         <li class="dropdown"><a href="post-award.html">成果展示</a>
-                                            <!--<ul role="menu" class="dropdown-menu">-->
-                                            <!--<li><a href="services.html">大学生行为分析预测系统</a></li>-->
-                                            <!--<li><a href="service-details.html">知识图谱项目</a></li>-->
-                                            <!--</ul>-->
                                         </li>
                                         <li class="dropdown"><a href="post-achievement.html">项目介绍</a>
-                                            <!--<ul role="menu" class="dropdown-menu">-->
-                                            <!--<li><a href="services.html">大学生行为分析预测系统</a></li>-->
-                                            <!--<li><a href="service-details.html">知识图谱项目</a></li>-->
-                                            <!--</ul>-->
                                         </li>
                                         <li class="dropdown"><a href="pricing-faqs.html">资源共享</a>
-                                            <!--<ul role="menu" class="dropdown-menu">-->
-                                            <!--<li><a href="pricing-faqs.html">Pricing</a></li>-->
-                                            <!--<li><a href="pricing-faqs.html">Coming soon</a></li>-->
-                                            <!--<li><a href="typography.html">Typography</a></li>-->
-                                            <!--</ul>-->
                                         </li>
                                         <li class="dropdown"><a href="post-2-experience.html">技术博客</a>
-                                            <!--<ul role="menu" class="dropdown-menu">-->
-                                            <!--<li><a href="post-1.html">Blog - ver.01</a></li>-->
-                                            <!--<li><a href="post-2.html">Blog - ver.02</a></li>-->
-                                            <!--<li><a href="post-single.html">Blog - ver.03</a></li>-->
-                                            <!--</ul>-->
                                         </li>
                                         <li><a href="contact.html">加入我们</a></li>
                                     </ul>
@@ -184,7 +148,7 @@
         </div>
     </div>
     <div id="app" class="section-default">
-        <template v-for="(assortsMaterial,index) in assortsMaterials">
+        <template v-for="(assortsMaterial,index) in assortsMaterials" v-if="index<3">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -195,7 +159,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <template v-for="(assortList,index) in assortsMaterial.assortList">
+                    <template v-for="(assortList,index) in assortsMaterial.assortList" v-if="index<4">
                         <div class="col-md-3 col-sm-6">
                             <section class="b-pricing b-pricing_sm">
                                 <div class="b-pricing__inner">
@@ -226,9 +190,9 @@
         <div class="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">Copyrights 2016<a href="home.html" class="copyright__link"> We Guard Security
-                        Services</a> All rights reserved.<a href="home.html" class="copyright__link-2">Privacy
-                        Policy</a><a href="home.html" class="copyright__link-2">Terms & Conditions</a></div>
+                    <div class="col-xs-12">Copyrights 2018<a href="home.html" class="copyright__link"> 燕山大学大数据中心
+                    </a>保留所有权利
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,11 +208,25 @@
 <script>
 
     vue();
+    function getTeam() {
+        var teamInfo;
+        $.ajax({
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/teamInfo.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                teamInfo = data;
+                console.log(teamInfo);
+            }
+        });
+        return teamInfo;
+    }
     function getData() {
         var assortsMaterials;
         $.ajax({
             type: "get",
-            url: "http://localhost:8080/share/getAssorts.do",
+            url: "http://47.105.187.18/labDisplayPlatform/share/getAssorts.do",
             async: false,
             success: function (data) {
                 console.log(data);
@@ -258,10 +236,12 @@
         return assortsMaterials;
     }
     function vue() {
+        var team = getTeam();
         var assortsMaterials=getData();
         var app = new Vue({
             el: '#app',
             data: {
+                team:team,
                 assortsMaterials:assortsMaterials
             }
         });

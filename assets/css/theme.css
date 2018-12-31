@@ -3850,7 +3850,7 @@ body {
   margin-bottom: 0;
   vertical-align: middle;
   border: 0 none;
-  border-right: 1px solid #eee;
+  /*!*border-right: 1px solid #eee;*! 2018/12/30 ws*/
   z-index: 777;
 }
 

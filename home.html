@@ -10,6 +10,7 @@
     <meta content="telephone=no" name="format-detection"/>
     <meta name="HandheldFriendly" content="true"/>
     <link rel="stylesheet" href="assets/css/master.css"/>
+    <link rel="stylesheet" href="assets/css/layui.css"/>
     <!-- SWITCHER-->
     <link href="assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all"/>
     <link href="assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all"/>
@@ -50,21 +51,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <!--<ul class="social-net list-inline">-->
-                        <!--<li class="social-net__item"><a href="twitter.com" class="social-net__link"><i class="icon fa fa-twitter"></i></a></li>-->
-                        <!--<li class="social-net__item"><a href="facebook.com" class="social-net__link"><i class="icon fa fa-facebook"></i></a></li>-->
-                        <!--<li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i class="icon fa fa-linkedin"></i></a></li>-->
-                        <!--<li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i class="icon fa fa-vimeo"></i></a></li>-->
-                        <!--<li class="social-net__item"><a href="rss.com" class="social-net__link"><i class="icon fa fa-rss"></i></a></li>-->
-                        <!--<li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i class="icon fa fa-google-plus"></i></a></li>-->
-                        <!--</ul>-->
+                        <ul class="social-net list-inline">
+
+                        </ul>
                         <!-- end social-list-->
                         <div class="header-contact">
-                            <div class="header-contact__item">Call :<span
-                                    class="header-contact__info"> 234 567 8900</span></div>
-                            <div class="header-contact__item">Email :<a href="mailto:info@domain.com"
-                                                                        class="header-contact__info">
-                                info@domain.com</a></div>
+                            <div class="header-contact__item">电话 :<span
+                                    class="header-contact__info"> {{team.teamPhone}}</span></div>
+                            <div class="header-contact__item">邮箱 :<a :href="'mailto:'+team.teamEmail"
+                                                                     class="header-contact__info">
+                                {{team.teamEmail}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -81,9 +77,9 @@
                                         class="navbar-toggle"><span class="icon-bar"></span><span
                                         class="icon-bar"></span><span class="icon-bar"></span></button>
                             </div>
-                            <a href="home.html" class="btn-primary header-main__btn btn btn-sm btn-effect">ask a
-                                quote</a>
-                            <div class="search-trigger"><i class="icon pe-7s-search"></i></div>
+                            <!--<a href="home.html" class="btn-primary header-main__btn btn btn-sm btn-effect">ask a-->
+                                <!--quote</a>-->
+                            <!--<div class="search-trigger"><i class="icon pe-7s-search"></i></div>-->
                             <nav class="navbar yamm">
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav">
@@ -101,25 +97,25 @@
                                         <li><a href="contact.html">加入我们</a></li>
                                     </ul>
                                 </div>
-                                <div class="modal-search">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                                                <form class="form-search-global">
-                                                    <input type="text" placeholder="暂未开放"
-                                                           class="form-search-global__input"/>
-                                                    <button class="form-search-global__btn"><i
-                                                            class="icon fa fa-search"></i></button>
-                                                    <div class="form-search-global__note">Begin typing your search above
-                                                        and press return to search.
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="modal-search__close close"><i class="fa fa-times"></i>
-                                    </button>
-                                </div>
+                                <!--<div class="modal-search">-->
+                                    <!--<div class="container">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">-->
+                                                <!--<form class="form-search-global">-->
+                                                    <!--<input type="text" placeholder="暂未开放"-->
+                                                           <!--class="form-search-global__input"/>-->
+                                                    <!--<button class="form-search-global__btn"><i-->
+                                                            <!--class="icon fa fa-search"></i></button>-->
+                                                    <!--<div class="form-search-global__note">Begin typing your search above-->
+                                                        <!--and press return to search.-->
+                                                    <!--</div>-->
+                                                <!--</form>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<button type="button" class="modal-search__close close"><i class="fa fa-times"></i>-->
+                                    <!--</button>-->
+                                <!--</div>-->
                             </nav>
                             <!-- end nav-->
                         </div>
@@ -134,7 +130,8 @@
          data-slider-buttons="false" class="main-slider slider-pro">
         <div class="sp-slides">
             <!-- Slide 1-->
-            <div class="sp-slide"><img src="assets/media/components/b-main-slider/bg-1.jpg" alt="slider"
+            <div class="sp-slide">
+                <img src="assets/media/components/b-main-slider/bg-1.jpg" alt="slider"
                                        class="sp-image"/>
                 <div class="container">
                     <div class="row">
@@ -154,7 +151,8 @@
                 </div>
             </div>
             <!-- Slide 2-->
-            <div class="sp-slide"><img src="assets/media/components/b-main-slider/bg-2.jpg" alt="slider"
+            <div class="sp-slide">
+                <img src="assets/media/components/b-main-slider/bg-2.jpg" alt="slider"
                                        class="sp-image"/>
                 <div class="container">
                     <div class="row">
@@ -178,26 +176,27 @@
                 </div>
             </div>
             <!-- Slide 3-->
-            <div class="sp-slide"><img src="assets/media/components/b-main-slider/bg-3.jpg" alt="slider"
-                                       class="sp-image"/>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7 col-sm-10 col-sm-offset-1">
-                            <h2 data-width="100%" data-show-transition="left" data-hide-transition="left"
-                                data-show-duration="800" data-show-delay="400" data-hide-delay="400"
-                                class="main-slider__title sp-layer">“小小画家”团队获2018年“创青春”全国大学生智慧校园比赛金奖</h2>
-                            <h3 data-width="100%" data-show-transition="left" data-hide-transition="left"
-                                 data-show-duration="800" data-show-delay="400" data-hide-delay="400"
-                                 class="main-slider__info sp-layer">团队项目以“深度学习架起文本和图像的桥梁”的新颖创意，赢得了评委的好评，取得决赛第三名的好成绩。
-                            </h3>
-                            <div data-width="100%" data-show-transition="left" data-hide-transition="left"
-                                 data-show-duration="800" data-show-delay="400" data-hide-delay="400" class="sp-layer">
-                                <a href="services.html"
-                                   class="main-slider__btn btn btn-primary btn-sm btn-effect">查看详情</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="sp-slide">-->
+                <!--<img src="assets/media/components/b-main-slider/bg-3.jpg" alt="slider"-->
+                                       <!--class="sp-image"/>-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-7 col-sm-10 col-sm-offset-1">-->
+                            <!--<h2 data-width="100%" data-show-transition="left" data-hide-transition="left"-->
+                                <!--data-show-duration="800" data-show-delay="400" data-hide-delay="400"-->
+                                <!--class="main-slider__title sp-layer">“小小画家”团队获2018年“创青春”全国大学生智慧校园比赛金奖</h2>-->
+                            <!--<h3 data-width="100%" data-show-transition="left" data-hide-transition="left"-->
+                                 <!--data-show-duration="800" data-show-delay="400" data-hide-delay="400"-->
+                                 <!--class="main-slider__info sp-layer">团队项目以“深度学习架起文本和图像的桥梁”的新颖创意，赢得了评委的好评，取得决赛第三名的好成绩。-->
+                            <!--</h3>-->
+                            <!--<div data-width="100%" data-show-transition="left" data-hide-transition="left"-->
+                                 <!--data-show-duration="800" data-show-delay="400" data-hide-delay="400" class="sp-layer">-->
+                                <!--<a href="services.html"-->
+                                   <!--class="main-slider__btn btn btn-primary btn-sm btn-effect">查看详情</a></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
     <!-- end main-slider-->
@@ -336,27 +335,27 @@
         </div>
     </section>
     -->
-
     <footer class="footer">
-
         <div class="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">Copyrights 2016<a href="home.html" class="copyright__link"> We Guard Security
-                        Services</a> All rights reserved.<a href="home.html" class="copyright__link-2">Privacy
-                        Policy</a><a href="home.html" class="copyright__link-2">Terms & Conditions</a></div>
+                    <div class="col-xs-12">Copyrights 2018<a href="home.html" class="copyright__link"> 燕山大学大数据中心
+                    </a>保留所有权利
+                        <!--<a href="home.html" class="copyright__link-2">Privacy-->
+                        <!--Policy</a><a href="home.html" class="copyright__link-2">Terms & Conditions</a>-->
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 </div>
 <!-- end layout-theme-->
-
-
-<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/vue.min.js"></script>
+<script src="assets/js/jquery.params.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="assets/layui.js"></script>
 <script src="assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
 <script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
 <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -369,5 +368,36 @@
 <script src="assets/plugins/switcher/js/dmss.js"></script>
 <script src="assets/plugins/jarallax/jarallax.min.js"></script>
 <script src="assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script>
+
+    initalize();
+
+    function getTeam() {
+        var teamInfo;
+        $.ajax({
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/teamInfo.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                teamInfo = data;
+                console.log(teamInfo);
+            }
+        });
+        return teamInfo;
+    }
+
+    function initalize() {
+        team = getTeam();
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                team: team,
+            }
+        });
+    }
+</script>
+
+
 </body>
 </html>

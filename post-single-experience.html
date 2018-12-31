@@ -200,7 +200,9 @@
 									<div class="ui-decor-type-2"></div>
 								</div>
 							</div>
-							<div class="about-author__img"><img :src=user.userImg alt="foto" class="img-responsive" /></div>
+							<div class="about-author__img">
+                                <img :src=user.userImg alt="foto" class="img-responsive" />
+                            </div>
 							<div class="about-author__inner">
 								<div class="about-author__header"><span class="about-author__title">{{blog.userName}}</span><!--<span class="about-author__category">/  {{user.userRole}}</span>--></div>
 								<div class="about-author__description">{{user.userDes}}</div>
@@ -387,12 +389,26 @@
 		});
 		return categories;
 	}
-
+    function getTeam() {
+        var teamInfo;
+        $.ajax({
+            url: "http://47.105.187.18/labDisplayPlatform/achievement/teamInfo.do",
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                teamInfo = data;
+                console.log(teamInfo);
+            }
+        });
+        return teamInfo;
+    }
 	function initalize() {
 		var blog=getData();
 		var user=getUser();
 		var recentBlogs=getRecent();
 		var categories=getCategory();
+        var team = getTeam();
 		var layer = layui.layer;
 		var vue = new Vue({
 			el: "#app",
@@ -400,7 +416,8 @@
 				blog: blog,
 				user:user,
 				recentBlogs:recentBlogs,
-				categories:categories
+				categories:categories,
+                team: team
 			},
 			methods: {
 				reload() {
